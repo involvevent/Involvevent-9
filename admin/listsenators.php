@@ -46,7 +46,14 @@ $conn = new mysqli($host, $user, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$sql = "SELECT * FROM ppv0008003.studentlisting where senator=1 and studentid!='0000001'";
+$sql = "SELECT sl.* FROM ppv0008003.studentlisting sl
+inner join scannerlinkinner si on sl.emailaddress=si.email
+inner join scannerlinkouter so on si.ScannerLinkAddress=so.scannerlinkaddressouter
+inner join scanner s on so.scanner=s.scanner
+inner join eventnames e on s.EventID=e.EventID
+inner join datestosemesters d on e.EventDate=d.Date
+inner join semester se on d.Semester=se.semester and se.begindate<=now() and se.enddate>=now()
+where senator=0 and studentid!='0000001'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
