@@ -96,7 +96,7 @@ $conn = new mysqli($host, $user, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$sql = "SELECT * FROM ppv0008003.studentlisting where senator=0 and studentid!='0000001'";
+$sql = "SELECT * FROM ppv0008003.activestudents where senator=0 and studentid!='0000001'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
