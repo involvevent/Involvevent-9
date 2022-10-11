@@ -19,7 +19,7 @@ mysqlkeys.php
 **/mysqlkeys.php
 public/publicmysqlkeys.php
 *.phparchive
-
+refreshpull.php
 
 startupfiles/
 
