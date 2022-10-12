@@ -25,7 +25,7 @@ $results=mysqli_query($con, $query);
 foreach ($results as $HostName){
 
 ?>
-<option value="<?php echo $HostName["EventID"]; ?>"><?php echo echo $HostName["EventDate"]; 
+<option value="<?php echo $HostName["EventID"]; ?>"><?php echo $HostName["EventDate"]; 
 	echo " - ";
 				echo $HostName["EventName"]; ?></option>
 <?php
