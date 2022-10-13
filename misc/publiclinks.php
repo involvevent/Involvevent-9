@@ -46,7 +46,7 @@ $conn = new mysqli($host, $user, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$sql = "SELECT * FROM ppv0008003.randomkeyswithlink";
+$sql = "SELECT * FROM ppv0008003.randomkeyswithlink order by Senator desc, faculty desc, StudentLastName, StudentFirstName";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
