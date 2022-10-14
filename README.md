@@ -40,3 +40,5 @@ Chmod 775
 chown www-data
 
 ## Mail System
+We use PHP Mailer. See here: https://alexwebdevelop.com/phpmailer-tutorial/
+/var/www/html/SGAPenmenPrideMainAppV1/phpmailer/vendor/phpmailer/phpmailer
