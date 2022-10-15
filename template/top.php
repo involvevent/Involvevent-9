@@ -12,17 +12,27 @@ $uri = $_SERVER['REQUEST_URI']; ?>
     ?><meta http-equiv="refresh" content="60" ><?php
   } ?>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="/css/sga.css<?php //echo "?".date('l jS \of F Y h:i:s A'); ?>" rel="stylesheet" type="text/css">
 	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <?php if($uri=='/events/fulleventlistingtest.php'){
+    ?>
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <?php
+  }
+  else {
+    ?><link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"><?php
+  }?>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="/js/hex.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111454242-1"></script>
 <?php
@@ -46,6 +56,12 @@ if( $iPod || $iPhone || $iPad){
 ?>
 
 <script>
+<?php if($uri=='/events/fulleventlistingtest.php'){
+  ?>$(document).ready( function () {
+    $('#datalisting').DataTable();
+} );<?php
+} ?>
+
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
