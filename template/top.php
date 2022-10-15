@@ -56,12 +56,6 @@ if( $iPod || $iPhone || $iPad){
 ?>
 
 <script>
-<?php if($uri=='/events/fulleventlistingtest.php'){
-  ?>$(document).ready( function () {
-    $('#datalisting').DataTable();
-} );<?php
-} ?>
-
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
