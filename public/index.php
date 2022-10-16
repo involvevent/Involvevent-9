@@ -252,13 +252,8 @@ $url = $protocol . $_SERVER['HTTP_HOST'];
         </div>
         <div class="col-sm-10 graphbox">
 		<h3>You Have Attended the Following Events:</h3>
-            <table class="table table-striped">
-                <col width="10%">
-                <col width="35%">
-                <col width="15%">
-                <col width="10%">
-                <col width="10%">
-                <col width="20%">
+            <table class="tabledisplay">
+<thead>
                 <tr>
                     <th>Event Date
                     </th>
@@ -271,7 +266,7 @@ $url = $protocol . $_SERVER['HTTP_HOST'];
                     <th>Points
                     </th>
                 </tr>
-
+</thead>
                 <?php
 $sql = "SELECT * FROM ppv0008004.pubscanner where Pubrandomkeycol='".$idclean."' order by PubEventDate desc;";
 $result = $conn->query($sql);
