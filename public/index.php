@@ -16,6 +16,13 @@ else{
 $idnumlenchecked = $idnumnotsafe;
 }
 $idclean = strtolower($idnumlenchecked);
+
+$conn = new mysqli($host, $user, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 $sql1= "SELECT * FROM ppv0008004.pubtotalpointsandeventcurrentsem where Pubrandomkeycol=?";
 $stmt1 = $conn->prepare($sql1);
 $stmt1->bind_param("s", $idclean);
@@ -33,7 +40,12 @@ if ($result1->num_rows > 0) {
 	    $name = $row["PubFirstName"];
 	     }
 }
-$stmt1->close();
+$conn->close();
+$conn = new mysqli($host, $user, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 else {
 }
 $sql2= "SELECT * FROM ppv0008004.pubranking where Pubrandomkeycol=?";
@@ -57,7 +69,7 @@ $totevents=0;
 else{
 }
 
-$stmt2->close();
+$conn->close();
 	   ?>
 <div id="about" class="container-fluid">
     <div class="row">
@@ -107,6 +119,13 @@ $stmt2->close();
               </thead>
 
                 <?php
+
+                $conn = new mysqli($host, $user, $password, $dbname);
+                // Check connection
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+
                 $sql3= "SELECT PubSemester, totpoints, totevents FROM ppv0008004.pointspersemesterordered where Pubrandomkeycol=?";
                 $stmt3 = $conn->prepare($sql3);
                 $stmt3->bind_param("s", $idclean);
@@ -126,7 +145,7 @@ if ($result3->num_rows > 0) {
     }
 } else { }
 
-$stmt3->close();
+$conn->close();
 				?>
 			</table>
 		</div>
@@ -256,6 +275,12 @@ $url = $protocol . $_SERVER['HTTP_HOST'];
                 </tr>
 </thead>
                 <?php
+
+                $conn = new mysqli($host, $user, $password, $dbname);
+                // Check connection
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
                 $sql4= "SELECT * FROM ppv0008004.pubscanner where Pubrandomkeycol=? order by PubEventDate desc;";
                 $stmt4 = $conn->prepare($sql4);
                 $stmt4->bind_param("s", $idclean);
@@ -278,7 +303,7 @@ if ($result4->num_rows > 0) {
 } else {
 
 }
-$stmt4->close();
+
 $conn->close();
 
 ?>
