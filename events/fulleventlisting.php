@@ -20,6 +20,7 @@
                         <th>Do Not Total</th>
                         <th>Event Type</th>
                         <th>Host Name</th>
+                        <th>Edit Event</th>
                       </tr>
                     </thead>
 <?php
@@ -38,7 +39,7 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
        ?><tr>
-            <td> <?php echo $row["EventID"]; ?></td>
+            <td><?php echo $row["EventID"]; ?></td>
             <td><?php echo $row["EventName"]; ?></td>
             <td><?php echo $row["EventDate"]; ?></td>
             <td><?php echo $row["eventLocation"]; ?></td>
@@ -48,6 +49,10 @@ if ($result->num_rows > 0) {
             <td><?php echo $row["DoNotTotal"]; ?></td>
             <td><?php echo $row["EventTypeName"]; ?></td>
             <td><?php echo $row["HostName"]; ?></td>
+            <td><form action="/actions/editeventinformation.php">
+  <input type="hidden" name="event" value="<?php echo $row["EventID"]; ?>">
+  <input type="submit" value="Submit">
+</form></td>
           </tr><?php
     }
 } else { }
