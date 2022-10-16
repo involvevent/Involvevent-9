@@ -7,7 +7,7 @@
     </div>
     <div class="col-sm-10">
         <h2>Penmen Pride Event Listing</h2>
-<table id="datalisting" class="table table-striped display">
+<table id="datalisting" class="display">
       <col width="10%">
       <col width="25%">
       <col width="7%">
