@@ -15,37 +15,48 @@ $idnumlenchecked="65d610c1ef2cf3dc6885d76536b62c92";
 else{
 $idnumlenchecked = $idnumnotsafe;
 }
-$idclean = strtolower($idnumlenchecked);
-$sql1= "SELECT * FROM ppv0008004.pubtotalpointsandeventcurrentsem where Pubrandomkeycol=?";
-$stmt1 = $conn->prepare($sql1);
-$stmt1->bind_param("s", $idclean);
-$stmt1->execute();
-$result1 = $stmt1->get_result();
+$idnumlower = strtolower($idnumlenchecked);
+$vowels = array("select", "and", "or", "insert", "update", "delete", "execute", "show", "view", "create", "alter", "references", "index", "create", "view", " ", "routine", "event", "drop", "trigger", "grant", "option", "temporary", "table", "lock", ";",  ",", "echo", "$");
+$idnocommands = str_replace($vowels,"",$idnumlower);
+$idclean;
 
+if (strlen($idnocommands)!=32){
+$idclean="65d610c1ef2cf3dc6885d76536b62c92";
+}
+else{
+$idclean = $idnocommands;
+}
+$sql = "SELECT * FROM ppv0008004.pubtotalpointsandeventcurrentsem where Pubrandomkeycol='".$idclean."';";
+
+$result = $conn->query($sql);
 $totevents;
 $totpoints;
 $name;
-if ($result1->num_rows > 0) {
+if ($result->num_rows > 0) {
     // output data of each row
-    while($row = $result1->fetch_assoc()) {
+    while($row = $result->fetch_assoc()) {
        $totevents = $row["TotalEvents"];
+
 	    $totpoints = $row["TotalPoints"];
+
 	    $name = $row["PubFirstName"];
+
+
 	     }
 }
-$stmt1->close();
 else {
-}
-$sql2= "SELECT * FROM ppv0008004.pubranking where Pubrandomkeycol=?";
-$stmt2 = $conn->prepare($sql2);
-$stmt2->bind_param("s", $idclean);
-$stmt2->execute();
-$result2 = $stmt2->get_result();
 
-if ($result2->num_rows > 0) {
+}
+$sql = "SELECT * FROM ppv0008004.pubranking where Pubrandomkeycol='".$idclean."';";
+
+$result = $conn->query($sql);
+$totrank;
+if ($result->num_rows > 0) {
     // output data of each row
-    while($row = $result2->fetch_assoc()) {
+    while($row = $result->fetch_assoc()) {
        $totrank = $row["Pubranking"];
+
+
 	     }
 }
 else {
@@ -56,8 +67,6 @@ $totevents=0;
 }
 else{
 }
-
-$stmt2->close();
 	   ?>
 <div id="about" class="container-fluid">
     <div class="row">
@@ -95,8 +104,7 @@ $stmt2->close();
                 <col width="10%">
                 <col width="35%">
                 <col width="15%">
-                <thead>
-                  <tr>
+                <tr>
                     <th>Semester
                     </th>
                     <th>Events
@@ -104,29 +112,33 @@ $stmt2->close();
                     <th>Points
                     </th>
                 </tr>
-              </thead>
 
                 <?php
-                $sql3= "SELECT PubSemester, totpoints, totevents FROM ppv0008004.pointspersemesterordered where Pubrandomkeycol=?";
-                $stmt3 = $conn->prepare($sql3);
-                $stmt3->bind_param("s", $idclean);
-                $stmt3->execute();
-                $result3 = $stmt3->get_result();
-
-if ($result3->num_rows > 0) {
+$sql = "SELECT PubSemester, totpoints, totevents FROM ppv0008004.pointspersemesterordered where Pubrandomkeycol='".$idclean."';";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
     // output data of each row
-    while($row = $result3->fetch_assoc()) {
+    while($row = $result->fetch_assoc()) {
        ?>
                     <tr>
-                        <td><?php echo $row["PubSemester"]; ?></td>
-                        <td><?php echo $row["totevents"]; ?></td>
-                        <td><?php echo $row["totpoints"]; ?></td>
+                        <td>
+                            <?php echo $row["PubSemester"];
+	   ?>
+                        </td>
+                        <td>
+                            <?php echo $row["totevents"];
+	   ?>
+                        </td>
+                        <td>
+                            <?php echo $row["totpoints"];
+	   ?>
+                        </td>
                     </tr>
                     <?php
     }
-} else { }
+} else {
 
-$stmt3->close();
+}
 				?>
 			</table>
 		</div>
@@ -256,31 +268,40 @@ $url = $protocol . $_SERVER['HTTP_HOST'];
                 </tr>
 </thead>
                 <?php
-                $sql4= "SELECT * FROM ppv0008004.pubscanner where Pubrandomkeycol=? order by PubEventDate desc;";
-                $stmt4 = $conn->prepare($sql4);
-                $stmt4->bind_param("s", $idclean);
-                $stmt4->execute();
-                $result4 = $stmt4->get_result();
-
-if ($result4->num_rows > 0) {
+$sql = "SELECT * FROM ppv0008004.pubscanner where Pubrandomkeycol='".$idclean."' order by PubEventDate desc;";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
     // output data of each row
-    while($row = $result4->fetch_assoc()) {
+    while($row = $result->fetch_assoc()) {
        ?>
                     <tr>
-                        <td><?php echo $row["PubEventDate"]; ?></td>
-                        <td><?php echo $row["PubEventName"]; ?></td>
-                        <td><?php echo $row["PubEventHost"]; ?></td>
-                        <td><?php echo $row["PubSemester"]; ?></td>
-                        <td><?php echo $row["PubPointValue"]; ?></td>
+                        <td>
+                            <?php echo $row["PubEventDate"];
+	   ?>
+                        </td>
+                        <td>
+                            <?php echo $row["PubEventName"];
+	   ?>
+                        </td>
+                        <td>
+                            <?php echo $row["PubEventHost"];
+	   ?>
+                        </td>
+                        <td>
+                            <?php echo $row["PubSemester"];
+	   ?>
+                        </td>
+                        <td>
+                            <?php echo $row["PubPointValue"];
+	   ?>
+                        </td>
                     </tr>
                     <?php
     }
 } else {
 
 }
-$stmt4->close();
 $conn->close();
-
 ?>
             </table>
         </div>
