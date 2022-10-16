@@ -7,12 +7,8 @@
     </div>
     <div class="col-sm-10">
         <h2>Penmen Pride Host Listing</h2>
-<table class="table table-striped">
-      <col width="10%">
-  <col width="50%">
-      <col width="12%">
-  <col width="16%">
-      <col width="12%">
+<table class="tabledisplay">
+<thead>
 <tr>
 <th>Host ID
 </th>
@@ -25,7 +21,7 @@
 <th>Host Inactive
 </th>
 </tr>
-
+</thead>
 <?php
 require '../mysqlkeys.php';
 // Create connection
@@ -52,6 +48,20 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?>
+<tfoot>
+<tr>
+<th>Host ID
+</th>
+<th>Host Name
+</th>
+<th>Host Type
+</th>
+<th>Host Email
+</th>
+<th>Host Inactive
+</th>
+</tr>
+</tfoot>
 </table>
         </div>
     <div class="col-sm-1">
