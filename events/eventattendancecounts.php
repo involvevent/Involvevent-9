@@ -7,15 +7,8 @@
     </div>
     <div class="col-sm-10">
         <h2>Penmen Pride Event Attendance Numbers</h2>
-<table class="table table-striped">
-      <col width="10%">
-  <col width="35%">
-      <col width="15%">
-  <col width="6%">
-  <col width="13%">
-  <col width="7%">
-  <col width="7%">
-  <col width="7%">
+<table class="tabledisplay">
+<thead>
 <tr>
 <th>Event ID
 </th>
@@ -34,7 +27,7 @@
 <th>Total Known
 </th>
 </tr>
-
+</thead>
 <?php
 require '../mysqlkeys.php';
 // Create connection
@@ -65,6 +58,26 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?>
+<tfoot>
+<tr>
+<th>Event ID
+</th>
+<th>Event Name
+</th>
+<th>Event Date
+</th>
+<th>Points
+</th>
+<th>Event Type
+</th>
+<th>Event Host
+</th>
+<th>Total Scanned
+</th>
+<th>Total Known
+</th>
+</tr>
+</tfoot>
 </table>
         </div>
     <div class="col-sm-1">
