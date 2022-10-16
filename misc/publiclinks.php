@@ -13,22 +13,17 @@
 	      <div class="row">
 		      <div class="row">
 			      <div class="col-sm-12">
-<table class="table table-striped">
-      <col width="35%">
-  <col width="10%">
-      <col width="15%">
-  <col width="15%">
-      <col width="5%">
-  <col width="5%">
-	<col width="15%">
+<table class="tabledisplay">
+<thead>
 <tr>
-<th>Email Address
-</th>
-<th>Student ID
-</th>
+
 <th>Last Name
 </th>
 <th>First Name
+</th>
+<th>Email Address
+</th>
+<th>Student ID
 </th>
 <th>Senator
 </th>
@@ -37,7 +32,7 @@
 <th>Portal
 </th>
 </tr>
-
+</thead>
 <?php
 require '../mysqlkeys.php';
 // Create connection
@@ -51,19 +46,38 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-       ?><tr><td> <?php echo $row["email"];
+       ?><tr><td><?php echo $row["StudentLastName"];
+  	   ?></td><td><?php echo $row["StudentFirstName"];
+  	   ?></td><td> <?php echo $row["email"];
 	   ?></td><td><?php echo $row["StudentID"];
-	   ?></td><td><?php echo $row["StudentLastName"];
-	   ?></td><td><?php echo $row["StudentFirstName"];
 	   ?></td><td><?php if($row["Senator"]==1){ ?><span class="glyphicon glyphicon-ok"></span><?php } else { ?><span class="glyphicon glyphicon-remove"></span><?php }
 	   ?></td><td><?php if($row["Faculty"]==1){ ?><span class="glyphicon glyphicon-ok"></span><?php } else { ?><span class="glyphicon glyphicon-remove"></span><?php }
-	   ?></td><td><a href="<?php echo $row["link"];?>" target="_blank"><div class="linkbuttontopublic">Go to Portal</div></a></td></tr><?php
+	   ?></td><td><a href="<?php echo $row["link"];?>" target="_blank">Go to Portal</a></td></tr><?php
     }
 } else {
 
 }
 $conn->close();
 ?>
+<tfoot>
+<tr>
+
+<th>Last Name
+</th>
+<th>First Name
+</th>
+<th>Email Address
+</th>
+<th>Student ID
+</th>
+<th>Senator
+</th>
+<th>Faculty
+</th>
+<th>Portal
+</th>
+</tr>
+</tfoot>
 </table>
         </div>
 

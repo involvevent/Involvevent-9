@@ -9,18 +9,19 @@
         <h2>Penmen Pride Host Listing</h2>
 <table class="tabledisplay">
 <thead>
-<tr>
-<th>Host ID
-</th>
-<th>Host Name
-</th>
-<th>Host Type
-</th>
-<th>Host Email
-</th>
-<th>Host Inactive
-</th>
-</tr>
+  <tr>
+    <th>Host Name
+    </th>
+
+  <th>Host Type
+  </th>
+  <th>Host Email
+  </th>
+  <th>Host ID
+  </th>
+  <th>Host Inactive
+  </th>
+  </tr>
 </thead>
 <?php
 require '../mysqlkeys.php';
@@ -37,10 +38,10 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-       ?><tr><td> <?php echo $row["HostID"];
-	   ?></td><td><?php echo $row["HostName"];
+       ?><tr><td><?php echo $row["HostName"];
 	   ?></td><td><?php echo $row["HostType"];
-	   ?></td><td><a href="mailto:<?php echo $row["HostEmail"]; ?>"><?php echo $row["HostEmail"]; ?></a></td><td><?php if( $row["HostInactive"]==1){ echo 'Yes';} else{ echo 'No';};
+	   ?></td><td><a href="mailto:<?php echo $row["HostEmail"]; ?>"><?php echo $row["HostEmail"]; ?></a></td><td> <?php echo $row["HostID"];
+   ?></td><td><?php if( $row["HostInactive"]==1){ echo 'Yes';} else{ echo 'No';};
 	   ?></td></tr><?php
     }
 } else {
@@ -50,13 +51,14 @@ $conn->close();
 ?>
 <tfoot>
 <tr>
-<th>Host ID
-</th>
-<th>Host Name
-</th>
+  <th>Host Name
+  </th>
+
 <th>Host Type
 </th>
 <th>Host Email
+</th>
+<th>Host ID
 </th>
 <th>Host Inactive
 </th>
