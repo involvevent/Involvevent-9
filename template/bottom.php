@@ -8,7 +8,12 @@
 <script>
 $(document).ready(function(){
 
-      $('table.display').DataTable();
+      $('table.tabledisplay').DataTable({
+          lengthMenu: [
+              [50, 100, 250, 500, 1000, -1],
+              [50, 100, 250, 500, 1000, 'All'],
+          ],
+      });
   // Add smooth scrolling to all links in navbar + footer link
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
     // Make sure this.hash has a value before overriding default behavior
