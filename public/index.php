@@ -1,30 +1,21 @@
 <?php
 include '../template/publictop.php';
 require 'publicmysqlkeys.php';
-
-$idnumnotsafe = $_GET["id"];
-$idnumlenchecked;
-if (strlen($idnumnotsafe)!=32){
-  $idnumlenchecked="65d610c1ef2cf3dc6885d76536b62c92";
-}
-else{
-  $idnumlenchecked = $idnumnotsafe;
-}
-$idclean = strtolower($idnumlenchecked);
-
-<<<<<<< Updated upstream
-=======
 // Create connection
->>>>>>> Stashed changes
 $conn = new mysqli($host, $user, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
+$idnumnotsafe = $_GET["id"];
+$idnumlenchecked;
+if (strlen($idnumnotsafe)!=32){
+$idnumlenchecked="65d610c1ef2cf3dc6885d76536b62c92";
+}
+else{
+$idnumlenchecked = $idnumnotsafe;
+}
+$idclean = strtolower($idnumlenchecked);
 $sql1= "SELECT * FROM ppv0008004.pubtotalpointsandeventcurrentsem where Pubrandomkeycol=?";
 $stmt1 = $conn->prepare($sql1);
 $stmt1->bind_param("s", $idclean);
@@ -42,23 +33,8 @@ if ($result1->num_rows > 0) {
 	    $name = $row["PubFirstName"];
 	     }
 }
-$conn->close();
-<<<<<<< Updated upstream
-$conn = new mysqli($host, $user, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-=======
->>>>>>> Stashed changes
+$stmt1->close();
 else {
-}
-$conn->close();
-// Create connection
-$conn = new mysqli($host, $user, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
 }
 $sql2= "SELECT * FROM ppv0008004.pubranking where Pubrandomkeycol=?";
 $stmt2 = $conn->prepare($sql2);
@@ -81,16 +57,7 @@ $totevents=0;
 else{
 }
 
-$conn->close();
-<<<<<<< Updated upstream
-=======
-// Create connection
-$conn = new mysqli($host, $user, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
->>>>>>> Stashed changes
+$stmt2->close();
 	   ?>
 <div id="about" class="container-fluid">
     <div class="row">
@@ -140,13 +107,6 @@ if ($conn->connect_error) {
               </thead>
 
                 <?php
-
-                $conn = new mysqli($host, $user, $password, $dbname);
-                // Check connection
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
-
                 $sql3= "SELECT PubSemester, totpoints, totevents FROM ppv0008004.pointspersemesterordered where Pubrandomkeycol=?";
                 $stmt3 = $conn->prepare($sql3);
                 $stmt3->bind_param("s", $idclean);
@@ -166,16 +126,7 @@ if ($result3->num_rows > 0) {
     }
 } else { }
 
-$conn->close();
-<<<<<<< Updated upstream
-=======
-// Create connection
-$conn = new mysqli($host, $user, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
->>>>>>> Stashed changes
+$stmt3->close();
 				?>
 			</table>
 		</div>
@@ -305,12 +256,6 @@ $url = $protocol . $_SERVER['HTTP_HOST'];
                 </tr>
 </thead>
                 <?php
-
-                $conn = new mysqli($host, $user, $password, $dbname);
-                // Check connection
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
                 $sql4= "SELECT * FROM ppv0008004.pubscanner where Pubrandomkeycol=? order by PubEventDate desc;";
                 $stmt4 = $conn->prepare($sql4);
                 $stmt4->bind_param("s", $idclean);
@@ -333,12 +278,8 @@ if ($result4->num_rows > 0) {
 } else {
 
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
+$stmt4->close();
 $conn->close();
-
 
 ?>
             </table>
