@@ -51,7 +51,7 @@ if ($result->num_rows > 0) {
             <td><?php echo $row["HostName"]; ?></td>
             <td><form action="/actions/editeventinformation.php" method="post">
   <input type="hidden" name="event" value="<?php echo $row["EventID"]; ?>">
-  <input type="submit" value="Submit">
+  <input type="submit" value="Edit">
 </form></td>
           </tr><?php
     }
