@@ -15,6 +15,7 @@ $idnumlenchecked="65d610c1ef2cf3dc6885d76536b62c92";
 else{
 $idnumlenchecked = $idnumnotsafe;
 }
+
 $idnumlower = strtolower($idnumlenchecked);
 $vowels = array("select", "and", "or", "insert", "update", "delete", "execute", "show", "view", "create", "alter", "references", "index", "create", "view", " ", "routine", "event", "drop", "trigger", "grant", "option", "temporary", "table", "lock", ";",  ",", "echo", "$");
 $idnocommands = str_replace($vowels,"",$idnumlower);
@@ -27,6 +28,7 @@ else{
 $idclean = $idnocommands;
 }
 $sql = "SELECT * FROM ppv0008004.pubtotalpointsandeventcurrentsem where Pubrandomkeycol='".$idclean."';";
+
 
 $result = $conn->query($sql);
 $totevents;
@@ -44,10 +46,12 @@ if ($result->num_rows > 0) {
 
 	     }
 }
+
 else {
 
 }
 $sql = "SELECT * FROM ppv0008004.pubranking where Pubrandomkeycol='".$idclean."';";
+
 
 $result = $conn->query($sql);
 $totrank;
@@ -67,6 +71,7 @@ $totevents=0;
 }
 else{
 }
+
 	   ?>
 <div id="about" class="container-fluid">
     <div class="row">
@@ -114,6 +119,7 @@ else{
                 </tr>
 
                 <?php
+
 $sql = "SELECT PubSemester, totpoints, totevents FROM ppv0008004.pointspersemesterordered where Pubrandomkeycol='".$idclean."';";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
@@ -138,7 +144,9 @@ if ($result->num_rows > 0) {
     }
 } else {
 
+
 }
+
 				?>
 			</table>
 		</div>
@@ -268,9 +276,11 @@ $url = $protocol . $_SERVER['HTTP_HOST'];
                 </tr>
 </thead>
                 <?php
+
 $sql = "SELECT * FROM ppv0008004.pubscanner where Pubrandomkeycol='".$idclean."' order by PubEventDate desc;";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
+
     // output data of each row
     while($row = $result->fetch_assoc()) {
        ?>
@@ -301,7 +311,9 @@ if ($result->num_rows > 0) {
 } else {
 
 }
+
 $conn->close();
+
 ?>
             </table>
         </div>
