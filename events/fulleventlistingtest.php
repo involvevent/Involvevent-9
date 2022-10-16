@@ -58,6 +58,18 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?>
+<tfoot>  <tr>
+    <th>Event ID</th>
+    <th>Event Name</th>
+    <th>Event Date</th>
+    <th>Event Location</th>
+    <th>Semester</th>
+    <th>Points</th>
+    <th>Double Points</th>
+    <th>Do Not Total</th>
+    <th>Event Type</th>
+    <th>Host Name</th>
+  </tr></tfoot>
   </table>
         </div>
     <div class="col-sm-1">
