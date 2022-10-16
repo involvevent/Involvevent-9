@@ -17,7 +17,7 @@
       <col width="7%">
       <col width="7%">
       <col width="20%">
-      <tr>
+    <thead>  <tr>
         <th>Event ID</th>
         <th>Event Name</th>
         <th>Event Date</th>
@@ -28,7 +28,7 @@
         <th>Do Not Total</th>
         <th>Event Type</th>
         <th>Host Name</th>
-      </tr>
+      </tr></thead>
 
 <?php
 require "../mysqlkeys.php"; // Create connection
