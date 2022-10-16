@@ -8,15 +8,6 @@
     <div class="col-sm-10">
         <h2>Penmen Pride Event Listing</h2>
 <table  class="tabledisplay">
-      <col width="10%">
-      <col width="25%">
-      <col width="7%">
-      <col width="10%">
-      <col width="8%">
-      <col width="6%">
-      <col width="7%">
-      <col width="7%">
-      <col width="20%">
     <thead>  <tr>
         <th>Event ID</th>
         <th>Event Name</th>

@@ -20,17 +20,9 @@ $uri = $_SERVER['REQUEST_URI']; ?>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="/css/sga.css<?php //echo "?".date('l jS \of F Y h:i:s A'); ?>" rel="stylesheet" type="text/css">
 	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-  <?php if($uri=='/events/fulleventlistingtest.php'){
-    ?>
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
-    <?php
-  }
-  else {
-    ?><link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"><?php
-  }?>
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="/js/hex.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
