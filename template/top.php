@@ -22,7 +22,7 @@ $uri = $_SERVER['REQUEST_URI']; ?>
 	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
   <?php if($uri=='/events/fulleventlistingtest.php'){
     ?>
-<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <?php
