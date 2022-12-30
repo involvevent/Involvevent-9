@@ -2,7 +2,7 @@
   <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
-  <p><a href="http://ryanevaul.com">System Created by Ryan Evaul.</a></p>
+  <p><a href="http://ryanevaul.com">&copy; Ryan Evaul 2022. All Rights Reserved.</a></p>
 </footer>
 
 <script>
