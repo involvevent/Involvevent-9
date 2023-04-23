@@ -15,6 +15,7 @@
       <col width="7%">
       <col width="7%">
   <col width="20%">
+  <thead>
 <tr>
   <th>Delete
   </th>
@@ -33,7 +34,7 @@
 <th>Scanner Username
 </th>
 </tr>
-
+</thead>
 <?php
 require '../mysqlkeys.php';
 // Create connection

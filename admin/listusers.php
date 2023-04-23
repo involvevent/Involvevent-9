@@ -14,6 +14,7 @@
   <col width="10%">
       <col width="10%">
   <col width="20%"> -->
+  <thead>
 <tr>
 <th>Last Name
 </th>
@@ -33,6 +34,7 @@
 <th>Can Administer Users</th>
 <th>Super Admin (Cannot Be Deleted)</th>
 </tr>
+</thead>
 
 <?php
 require '../mysqlkeys.php';
