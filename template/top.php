@@ -81,8 +81,8 @@ if( $iPod || $iPhone || $iPad){
             <?php if($userlevel>=4){ ?> <li><a href="/events/newevent.php">CREATE NEW EVENT</a></li> <?php } ?>
             <?php if($userlevel>=4){ ?> <li><a href="/events/newreoccuringevent.php">CREATE NEW REOCCURING EVENT</a></li> <?php } ?>
             <?php if($userlevel>=4){ ?> <li><a href="/events/newhost.php">CREATE NEW HOST</a></li> <?php } ?>
-            <?php if($userlevel>=4){ ?> <li><a href="/events/upload.php">EVENT ATTENDANCE TEXT FILE UPLOAD (OLD HANDHELD SCANNERS)</a></li> <?php } ?>
-            <?php if($userlevel>=4){ ?> <li><a href="/events/uploadcsv.php">EVENT ATTENDANCE CSV FILE UPLOAD</a></li> <?php } ?>
+            <?php if($userlevel>=4){ ?> <li><a href="/events/upload.php">EVENT ATTENDANCE TXT UPLOAD (OLD SCANNERS)</a></li> <?php } ?>
+            <?php if($userlevel>=4){ ?> <li><a href="/events/uploadcsv.php">EVENT ATTENDANCE CSV UPLOAD</a></li> <?php } ?>
             <?php if($userlevel>=4){ ?> <li><a href="/events/chooseeventtoedit.php">EDIT AN EVENT</a></li> <?php } ?>
             <?php if($userlevel>=3){ ?> <li><a href="/events/fulleventlisting.php">EVENT LISTING</a></li> <?php } ?>
             <?php if($userlevel>=3){ ?> <li><a href="/events/fullhostlisting.php">HOST LISTING</a></li> <?php } ?>
@@ -121,11 +121,11 @@ if( $iPod || $iPhone || $iPad){
             <?php if($userlevel>=3){ ?><li><a href="/trigger/dates.php">UPDATE DATES</a></li><?php } ?>
             <?php if($userlevel>=3){ ?><li><a href="/trigger/tallypoints.php">TALLY POINTS</a></li><?php } ?>
             <?php if($userlevel>=5){ ?><li><a href="/trigger/randomkeygenerator.php">RANDOM KEY GENERATOR</a></li><?php } ?>
-            <?php if($userlevel>=5){ ?><li><a href="/emailsystem/mailtextentry.php">SEND NEW PENMEN PRIDE EMAIL</a></li><?php } ?>
-            <?php if($userlevel>=5){ ?><li><a href="/emailsystem/viewpendingemails.php">PENDING EMAILS</a></li>  <?php } ?>
+            <?php if($userlevel>=5){ ?><li><a href="/emailsystem/mailtextentry.php">DRAFT NEW PENMEN PRIDE EMAIL</a></li><?php } ?>
+            <?php if($userlevel>=5){ ?><li><a href="/emailsystem/viewpendingemails.php">VIEW PENDING EMAILS</a></li>  <?php } ?>
             <?php if($userlevel>=3){ ?><li><a href="/misc/publiclinks.php">PUBLIC LINKS</a></li> <?php } ?>
             <?php if($userlevel>=3){ ?><li><a href="/timesystem/yearlisting.php">SEMESTER & SCHOOL YEAR ADJUSTMENT</a></li> <?php } ?>
-            <?php if($userlevel>=4){ ?> <li><a href="/misc/scandashboard.php">SCAN DASHBOARD</a></li> <?php } ?>
+            <?php if($userlevel>=4){ ?> <li><a href="/misc/scandashboard.php">RECENT SCANS DASHBOARD</a></li> <?php } ?>
         </ul>
       </li>
       <?php } ?>
