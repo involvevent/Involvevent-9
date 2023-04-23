@@ -16,7 +16,7 @@
             </div>
             <div class="col-sm-10">
               <h3>Current Students Listed as Senators</h3>
-<table class="table table-striped">
+<table class="tabledisplay">
       <col width="35%">
   <col width="10%">
       <col width="15%">
@@ -67,7 +67,7 @@ $conn->close();
 ?>
 </table>
 <h3>Current Students Not Listed as Senators</h3>
-<table class="table table-striped">
+<table  class="tabledisplay">
       <col width="35%">
   <col width="10%">
       <col width="15%">
