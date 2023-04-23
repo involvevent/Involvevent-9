@@ -23,6 +23,7 @@
   <col width="15%">
       <col width="15%">
       <col width="10%">
+      <thead>
 <tr>
 <th>Email Address
 </th>
@@ -37,7 +38,7 @@
 <th>Change Senator Status
 </th>
 </tr>
-
+</thead>
 <?php
 require '../mysqlkeys.php';
 // Create connection
@@ -73,6 +74,7 @@ $conn->close();
   <col width="15%">
       <col width="15%">
       <col width="10%">
+      <thead>
 <tr>
 <th>Email Address
 </th>
@@ -87,7 +89,7 @@ $conn->close();
 <th>Change Senator Status
 </th>
 </tr>
-
+</thead>
 <?php
 require '../mysqlkeys.php';
 // Create connection
