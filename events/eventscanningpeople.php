@@ -8,6 +8,8 @@
     <div class="col-sm-10">
         <h2>Penmen Pride Event Scanning People List</h2>
 <table class="table table-striped">
+
+
       <col width="10%">
   <col width="35%">
       <col width="15%">
@@ -15,6 +17,7 @@
       <col width="7%">
       <col width="7%">
   <col width="20%">
+  <thead>
 <tr>
   <th>Delete
   </th>
@@ -33,7 +36,7 @@
 <th>Scanner Username
 </th>
 </tr>
-
+</thead>
 <?php
 require '../mysqlkeys.php';
 // Create connection
