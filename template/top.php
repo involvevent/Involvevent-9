@@ -78,16 +78,17 @@ if( $iPod || $iPhone || $iPad){
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">EVENTS
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-            <?php if($userlevel>=4){ ?> <li><a href="/events/newevent.php">NEW EVENT INFORMATION</a></li> <?php } ?>
-            <?php if($userlevel>=4){ ?> <li><a href="/events/newhost.php">NEW HOST INFORMATION</a></li> <?php } ?>
-            <?php if($userlevel>=4){ ?> <li><a href="/events/upload.php">EVENT UPLOAD</a></li> <?php } ?>
+            <?php if($userlevel>=4){ ?> <li><a href="/events/newevent.php">CREATE NEW EVENT</a></li> <?php } ?>
+            <?php if($userlevel>=4){ ?> <li><a href="/events/newreoccuringevent.php">CREATE NEW REOCCURING EVENT</a></li> <?php } ?>
+            <?php if($userlevel>=4){ ?> <li><a href="/events/newhost.php">CREATE NEW HOST</a></li> <?php } ?>
+            <?php if($userlevel>=4){ ?> <li><a href="/events/upload.php">EVENT ATTENDANCE TEXT FILE UPLOAD (OLD HANDHELD SCANNERS)</a></li> <?php } ?>
+            <?php if($userlevel>=4){ ?> <li><a href="/events/uploadcsv.php">EVENT ATTENDANCE CSV FILE UPLOAD</a></li> <?php } ?>
             <?php if($userlevel>=4){ ?> <li><a href="/events/chooseeventtoedit.php">EDIT AN EVENT</a></li> <?php } ?>
-            <?php if($userlevel>=4){ ?> <li><a href="/events/uploadcsv.php">EVENT CSV UPLOAD</a></li> <?php } ?>
             <?php if($userlevel>=3){ ?> <li><a href="/events/fulleventlisting.php">EVENT LISTING</a></li> <?php } ?>
             <?php if($userlevel>=3){ ?> <li><a href="/events/fullhostlisting.php">HOST LISTING</a></li> <?php } ?>
             <?php if($userlevel>=4){ ?> <li><a href="/events/eventscanningpeople.php">EVENT PERSON SCANNER LISTING</a></li> <?php } ?>
             <?php if($userlevel>=4){ ?> <li><a href="/events/hostscanningpeople.php">HOST PERSON SCANNER LISTING</a></li> <?php } ?>
-            <?php if($userlevel>=4){ ?> <li><a href="/events/addscanningpeople.php">ADD SCANNING PEOPLE</a></li> <?php } ?>
+            <?php if($userlevel>=4){ ?> <li><a href="/events/addscanningpeople.php">ADD EVENT SCANNING PEOPLE</a></li> <?php } ?>
               <?php if($userlevel>=4){ ?> <li><a href="/events/addscanningpeoplehost.php">ADD HOST SCANNING PEOPLE</a></li> <?php } ?>
             <?php if($userlevel>=1){ ?> <li><a href="/events/chooseeventtoscanat.php">SCAN AN EVENT</a></li> <?php } ?>
         </ul>
@@ -96,9 +97,9 @@ if( $iPod || $iPhone || $iPad){
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">EXPORTS
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-            <?php if($userlevel>=3){ ?><li><a href="/exports/attendanceexport.php">EVENT ATTENDANCE INFORMATION</a></li><?php } ?>
+            <?php if($userlevel>=3){ ?><li><a href="/exports/attendanceexport.php">EVENT ATTENDANCE INFORMATION W/O Student IDS</a></li><?php } ?>
 		        <?php if($userlevel>=3){ ?><li><a href="/exports/attendanceexportwithid.php">EVENT ATTENDANCE INFORMATION WITH STUDENT IDS</a></li><?php } ?>
-		        <?php if($userlevel>=3){ ?><li><a href="/events/eventattendancecounts.php">EVENT ATTENDANCE NUMBERS</a></li><?php } ?>
+		        <?php if($userlevel>=3){ ?><li><a href="/events/eventattendancecounts.php">EVENT ATTENDANCE TOTALS</a></li><?php } ?>
             <?php if($userlevel>=3){ ?><li><a href="/exports/OSIExport.php">OSI DATA CONVERSION</a></li><?php } ?>
             <?php if($userlevel>=3){ ?><li><a href="/exports/fulltermpoints.php">TERM POINTS</a></li> </li><?php } ?>
             <?php if($userlevel>=3){ ?><li><a href="/exports/setupprizesheet.php">PRIZE SHEETS</a></li><?php } ?>
